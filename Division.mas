@@ -1,0 +1,34 @@
+/Ingresamos y guardamos valores de X y Y 
+Input
+Store X
+Input
+Store Y
+
+IFZEROS, Load Y
+	Skipcond 400 
+    jump DIVISION
+    jump OUT
+    
+DIVISION, Load X 
+	Subt Y
+    Store X  /Cargo equis para el valor siga acumulandose 
+    Skipcond 800   /Si el valor AC>0 
+    Jump ADDVALOR 
+    Load Z      
+    Add UNO      /Cada que el valor cabe una vez se le añade 1 a Z como un acumulador
+	Store Z 
+    Jump DIVISION /Regresaa al ciclo
+ADDVALOR, Load X
+    Skipcond 400  /Si el valor es igual a Cero porque la division es exacta 
+    jump OUT 
+    Load Z      
+    Add UNO /Cada que el valor cabe una vez se le añade 1 a Z como un acumulador
+	Store Z
+OUT,Load Z 
+	Output /Definir label para sacar del ciclo e imprimir resultado final 
+    Halt   /Terminar Código
+
+X, DEC 12 /Definimos X como numerador
+Y, DEC 2 /Definimos Y como denominador
+Z, DEC 0 /Resultado de resta
+UNO, DEC 1 
