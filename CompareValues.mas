@@ -1,0 +1,30 @@
+//LOAD A 
+//LOAD B
+//LOAD C//todo es en orden asigna valor 35 en memoria 101  
+A,	DEC 1
+B,	DEC 2
+C,	DEC 3
+//Realizar un comparador
+	Load A
+	SUBT B     //Hacemos la resta para comparar que  sea positivo  
+	Skipcond 800     //Si es mayo a 0 COMPRAR A CON C sino se pasa a ELSEIF
+	Jump ELSEIF
+	Load A
+	Subt C    //COMPARA A A CON C Y YA REVISAS SI SE IMPRIME A 
+	Skipcond 800 
+	Jump ELSEIF
+	Load A 
+	Output
+	Halt
+ELSEIF, Load B
+	Subt C 
+	Skipcond 800 
+	jump ELSE 
+	Load B
+	Output 
+	Halt
+ELSE, Load C 
+	Output 
+	Halt 
+
+//Se alinea con tab para que se aline con los decimales
