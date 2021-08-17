@@ -1,0 +1,28 @@
+ORG 100
+    
+    load ARRAY
+    store Pos_Index
+    Clear
+    Store Index
+    
+While, 	load Size
+    		subt Index
+            Skipcond 800
+            jump OUT
+            input
+            StoreI Pos_Index
+            load Pos_Index
+            add UNO
+            store Pos_Index
+            load Index
+            add UNO
+            store Index
+            jump While
+            
+OUT, 	Halt
+
+Index,	hex 0
+Pos_Index,	hex 120
+UNO, hex 1
+ARRAY, hex 120
+Size, Dec 10
